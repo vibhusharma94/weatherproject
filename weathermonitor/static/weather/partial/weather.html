@@ -1,0 +1,71 @@
+<div class="container" ng-init="setup()">
+  <h2>Weather Monitoring System 
+  <p class="lead">using wunderground api</p></h2>
+  <form role="form" class="form-horizontal">
+  
+    <div class="form-group">
+      <div class="col-sm-2">
+          <select  class="form-control" ng-model="payload.station" ng-options="station as station.city for station in stations track by station.id"></select>
+      </div>
+      <div class="col-sm-2">
+          <select class="form-control" ng-model="payload.parameter" ng-options="parameter as parameter.name for parameter in weather_parameters"></select>
+      </div>
+      <div class="col-sm-2" style="">
+              <input ng-model="payload.date" date-picker type="text" class="form-control" placeholder="Pick date">
+      </div>
+      <div class="col-sm-2" style="">
+              <input ng-model="payload.start_hour" time-picker type="text" class="form-control" placeholder="Start Hour">
+      </div>
+      <div class="col-sm-2" style="">
+              <input ng-model="payload.end_hour" time-picker type="text" class="form-control" placeholder="End Hour">
+      </div>
+      <div class="col-sm-1">
+          <button class="btn btn-primary" ng-click="plot_graph()">Plot Graph</button>
+      </div>
+       <div class="col-sm-1">
+          <button class="btn btn-success" data-toggle="modal" data-target="#addStation" >Add station</button>
+      </div>
+    </div>
+  
+  </form>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" 
+        chart-legend="true" chart-series="series" chart-click="onClick"></canvas> 
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="addStation" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Weather Station</h4>
+        </div>
+        <div class="modal-body">
+            <form role="form" class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-sm-12" style="">
+                          <input ng-model="place.name" googleplace  type="text" class="form-control" placeholder="Search Place">
+                  </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary pull-right" ng-click="AddNewStation()">Add Station</button>
+        </div>
+      </div>
+      
+    </div>
+</div>
+

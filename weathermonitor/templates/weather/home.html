@@ -1,0 +1,42 @@
+{% extends "weather/base.html" %}
+{% block head_title %}{% endblock %}
+
+{% block top_css %}
+        <link rel="stylesheet" href="/static/weather/css/main.css" type="text/css">
+        <link rel="stylesheet" href="/static/weather/lib/classic.css">
+        <link rel="stylesheet" href="/static/weather/lib/classic.date.css">
+        <link rel="stylesheet" href="/static/weather/lib/classic.time.css">
+        <link rel="stylesheet" href="/static/weather/bower_components/angular-chart.js/dist/angular-chart.css">
+{% endblock top_css %}
+
+{% block body %}
+        
+    <div ui-view ></div>   
+              
+{% endblock %}
+
+{% block footer_js %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src='/static/weather/lib/picker.js'></script>
+        <script src='/static/weather/lib/picker.date.js'></script>
+        <script src='/static/weather/lib/picker.time.js'></script>
+
+        <script src='/static/weather/lib/Chart.min.js'></script>
+
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script> 
+
+        <script src="/static/weather/js/app.js"></script>
+        <script src="/static/weather/js/ApiService.js"></script>
+        <script src="/static/weather/js/WeatherController.js"></script> 
+        <script src="/static/weather/js/directive.js"></script>
+
+        <script src="/static/weather/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+
+    
+{% endblock footer_js %}
+
