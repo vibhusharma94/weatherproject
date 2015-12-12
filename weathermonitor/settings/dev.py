@@ -154,7 +154,7 @@ MEDIA_URL = '/media/'
 
 
 
-GOOGLE_API_KEY = "AIzaSyDQ5mU1BDCc6L1p7rqG0fMYYEVikoRyqr0"
+GOOGLE_API_KEY = "AIzaSyDkd3u3_xhbQw_U09HTDRFqbeI4RUGwk1c"
 WEATHER_API_URL = "http://api.wunderground.com/api/"
 WEATHER_API_KEY = "31442a8920ef3a4d"
 
